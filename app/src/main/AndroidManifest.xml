@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.litepaltest">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Login"
+            android:label="首页"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="注册页面"
+            android:parentActivityName=".Login" />
+        <activity
+            android:name=".xinxiActivity"
+            android:label="个人信息" />
+        <activity
+            android:name=".TongActivity"
+            android:label="通讯录"
+            android:parentActivityName=".Login" />
+
+        <provider
+            android:name=".DatabaseProvider"
+            android:authorities="com.example.databasetest.provider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".musicActivity"
+            android:label="音乐"
+            android:parentActivityName=".Login" />
+        <activity
+            android:name=".VideoActivity"
+            android:label="视频"
+            android:parentActivityName=".Login" />
+        <activity android:name=".HttpActivity"></activity>
+    </application>
+
+</manifest>
